@@ -1,0 +1,71 @@
+;ADD
+
+MOV A, #2
+ADDC A, #2
+MOV R0, A
+CLR A
+
+;SUB
+
+MOV A, #5
+SUBB A,#2
+MOV R1,A
+CLR A
+
+;MUL
+
+MOV A,#2
+MOV B,#3
+MUL AB
+MOV R2,A
+CLR A
+
+;DIV
+MOV A,#6
+MOV B,#2
+DIV AB
+MOV R3,A
+CLR A
+
+;ANL
+CLR A
+MOV A,#0
+ANL A,#1
+ANL A,#0
+
+CLR A
+MOV A,#1
+ANL A,#1
+ANL A,#0
+
+;ORL
+CLR A
+MOV A,#0
+ORL A,#1
+ORL A,#0
+
+CLR A
+MOV A,#1
+ORL A,#1
+ORL A,#0
+
+;XRL
+CLR A
+MOV A,#0
+XRL A,#1
+XRL A,#0
+       
+CLR A
+MOV A,#1
+XRL A,#1
+XRL A,#0
+
+;RL
+CLR A
+MOV A,#1
+RL A
+
+;RR
+CLR A
+MOV A,#1
+RR A
