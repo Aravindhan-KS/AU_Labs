@@ -1,0 +1,167 @@
+aravindhan@LAPTOP-S0LMROKG:~$ ls
+Crypto  DevOps  L_CD  Startup-Pitch-Evaluation  a.out  aubecse  aws  awscliv2.zip  endsem  fact  snap  text.txt
+aravindhan@LAPTOP-S0LMROKG:~$ cd Devops
+-bash: cd: Devops: No such file or directory
+aravindhan@LAPTOP-S0LMROKG:~$ cd DevOps
+aravindhan@LAPTOP-S0LMROKG:~/DevOps$ tree
+.
+├── Lab
+│   └── Week1
+│       ├── dotfile.txt
+│       ├── sample.txt
+│       └── sample1.txt
+└── Theory
+    └── Week1
+        └── sample.txt
+
+5 directories, 4 files
+aravindhan@LAPTOP-S0LMROKG:~/DevOps$ cd Lab
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab$ mkdir Week2
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab$ ls
+Week1  Week2
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab$ cd Week2
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ nano sample.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ nano sample.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ ls
+sample.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ ls -lat
+total 12
+drwxr-xr-x 2 aravindhan aravindhan 4096 Jul 14 09:55 .
+-rw-r--r-- 1 aravindhan aravindhan   29 Jul 14 09:55 sample.txt
+drwxr-xr-x 4 aravindhan aravindhan 4096 Jul 14 09:52 ..
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ ls -l
+total 4
+-rw-r--r-- 1 aravindhan aravindhan 29 Jul 14 09:55 sample.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ ls -la
+total 12
+drwxr-xr-x 2 aravindhan aravindhan 4096 Jul 14 09:55 .
+drwxr-xr-x 4 aravindhan aravindhan 4096 Jul 14 09:52 ..
+-rw-r--r-- 1 aravindhan aravindhan   29 Jul 14 09:55 sample.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git status
+fatal: not a git repository (or any of the parent directories): .git
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git status -s
+fatal: not a git repository (or any of the parent directories): .git
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint:   git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint:   git branch -m <name>
+Initialized empty Git repository in /home/aravindhan/DevOps/Lab/Week2/.git/
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        sample.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ ls -lat
+total 16
+drwxr-xr-x 7 aravindhan aravindhan 4096 Jul 14 09:57 .git
+drwxr-xr-x 3 aravindhan aravindhan 4096 Jul 14 09:56 .
+-rw-r--r-- 1 aravindhan aravindhan   29 Jul 14 09:55 sample.txt
+drwxr-xr-x 4 aravindhan aravindhan 4096 Jul 14 09:52 ..
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git status -s
+?? sample.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        sample.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git add sample.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git status -s
+A  sample.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ nano sample.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git status -s
+AM sample.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git commit -m "commit"
+[master (root-commit) 03fe4f5] commit
+ 1 file changed, 3 insertions(+)
+ create mode 100644 sample.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git status -s
+ M sample.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ nano file2.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git status -s
+ M sample.txt
+?? file2.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git add file2.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git log
+commit 03fe4f536633859815afedbe66828ce7f52dd51e (HEAD -> master)
+Author: Aravindhan-KS <aravindhanks2005@gmail.com>
+Date:   Tue Jul 14 10:01:51 2026 +0000
+
+    commit
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git log --oneline
+03fe4f5 (HEAD -> master) commit
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git show 03fe4f536633859815afedbe66828ce7f52dd51e
+commit 03fe4f536633859815afedbe66828ce7f52dd51e (HEAD -> master)
+Author: Aravindhan-KS <aravindhanks2005@gmail.com>
+Date:   Tue Jul 14 10:01:51 2026 +0000
+
+    commit
+
+diff --git a/sample.txt b/sample.txt
+new file mode 100644
+index 0000000..da81d0c
+--- /dev/null
++++ b/sample.txt
+@@ -0,0 +1,3 @@
++qwertyuiop
++asdfghjkl
++zxcvbnm
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git help init
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git diff
+diff --git a/sample.txt b/sample.txt
+index da81d0c..71bac0c 100644
+--- a/sample.txt
++++ b/sample.txt
+@@ -1,3 +1,4 @@
+ qwertyuiop
+ asdfghjkl
+ zxcvbnm
++1234567890
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git remote add origin https://github.com/Aravindhan-KS/Week2-DevOps.git
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git branch -M main
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git push -u origin main
+Username for 'https://github.com': Aravindhan-KS
+Password for 'https://Aravindhan-KS@github.com':
+remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/Aravindhan-KS/Week2-DevOps.git/'
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git push -u origin main
+Username for 'https://github.com': Aravindhan-KS
+Password for 'https://Aravindhan-KS@github.com':
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 244 bytes | 244.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Aravindhan-KS/Week2-DevOps.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git commit -m "New Line Added"
+[main 4218fd1] New Line Added
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file2.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git push
+Username for 'https://github.com': Aravindhan-KS
+Password for 'https://Aravindhan-KS@github.com':
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 20 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 296 bytes | 296.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Aravindhan-KS/Week2-DevOps.git
+   03fe4f5..4218fd1  main -> main
