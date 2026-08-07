@@ -1,0 +1,10 @@
+import pandas as pd
+feature = pd.Series([15, 22, 8, 40, 30])
+x_min, x_max = feature.min(), feature.max()
+normalized = (feature - x_min) / (x_max - x_min)
+print(normalized.round(3).tolist())
+# manual check for record 0 (value=15) and record 3 (value=40)
+check_0 = (15 - x_min) / (x_max - x_min)
+check_3 = (40 - x_min) / (x_max - x_min)
+print('Record 0 manual:', round(check_0, 3))
+print('Record 3 manual:', round(check_3, 3))
