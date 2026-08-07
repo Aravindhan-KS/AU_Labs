@@ -1,0 +1,197 @@
+Welcome to Ubuntu 24.04.4 LTS (GNU/Linux 6.6.87.2-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Tue Jul 28 09:44:51 UTC 2026
+
+  System load:  0.16                Processes:             91
+  Usage of /:   0.8% of 1006.85GB   Users logged in:       0
+  Memory usage: 6%                  IPv4 address for eth0: 172.31.182.185
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+This message is shown once a day. To disable it please create the
+/home/aravindhan/.hushlogin file.
+aravindhan@LAPTOP-S0LMROKG:~$ ls
+Crypto  DevOps  L_CD  Startup-Pitch-Evaluation  a.out  aubecse  aws  awscliv2.zip  endsem  fact  snap  text.txt
+aravindhan@LAPTOP-S0LMROKG:~$ cd DevOps/
+aravindhan@LAPTOP-S0LMROKG:~/DevOps$ ls
+Lab  Theory
+aravindhan@LAPTOP-S0LMROKG:~/DevOps$ cd Lab
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab$ tree
+.
+├── Week1
+│   ├── dotfile.txt
+│   ├── sample.txt
+│   └── sample1.txt
+├── Week2
+│   ├── file2.txt
+│   ├── newfile.txt
+│   └── sample.txt
+└── Week3
+
+4 directories, 6 files
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab$ rm Week3
+rm: cannot remove 'Week3': Is a directory
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab$ rm -r Week3
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab$ tree
+.
+├── Week1
+│   ├── dotfile.txt
+│   ├── sample.txt
+│   └── sample1.txt
+└── Week2
+    ├── file2.txt
+    ├── newfile.txt
+    └── sample.txt
+
+3 directories, 6 files
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab$ cd Week2
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ vi .gitignore
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ nano .gitignore
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git add .
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git commit -m "Added .gitignore"
+[main 16229f8] Added .gitignore
+ 1 file changed, 2 insertions(+)
+ create mode 100644 .gitignore
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git log
+commit 16229f80a26782edb51c99b74b113f3b2b332e9e (HEAD -> main)
+Author: Aravindhan-KS <aravindhanks2005@gmail.com>
+Date:   Tue Jul 28 10:16:21 2026 +0000
+
+    Added .gitignore
+
+commit 80776a9e5f1b3ebe451d71a7b8b46cc556ce178f (origin/main)
+Author: Aravindhan-KS <aravindhanks2005@gmail.com>
+Date:   Tue Jul 21 11:07:04 2026 +0000
+
+    file edited
+
+commit 2b0a40f31cc356af67158a8cc2875ae1f05286b5 (develop)
+Author: Aravindhan-KS <aravindhanks2005@gmail.com>
+Date:   Tue Jul 21 10:54:49 2026 +0000
+
+    edited lines
+
+commit 69f94b5d03fa82bd888c8bec2875bfacb403b3a4
+Author: Aravindhan-KS <aravindhanks2005@gmail.com>
+Date:   Tue Jul 21 10:21:00 2026 +0000
+
+    new line added on develop branch
+
+commit f59775c5771f84f607f73da49bc35dda40a43687 (origin/develop)
+Author: Aravindhan-KS <aravindhanks2005@gmail.com>
+Date:   Tue Jul 21 10:10:10 2026 +0000
+
+    add: new file
+
+commit 0da13871e3138e9bb50bf93107e8294c4d4c98f8
+Author: Aravindhan-KS <aravindhanks2005@gmail.com>
+Date:   Tue Jul 21 10:05:02 2026 +0000
+
+    add: new lines
+
+commit 4218fd1b9cf9d2058a258621673506acadaa4262
+Author: Aravindhan-KS <aravindhanks2005@gmail.com>
+Date:   Tue Jul 14 10:43:35 2026 +0000
+
+    New Line Added
+
+commit 03fe4f536633859815afedbe66828ce7f52dd51e
+Author: Aravindhan-KS <aravindhanks2005@gmail.com>
+Date:   Tue Jul 14 10:01:51 2026 +0000
+
+    commit
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ cherrypick
+cherrypick: command not found
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git cherrypick
+git: 'cherrypick' is not a git command. See 'git --help'.
+
+The most similar command is
+        cherry-pick
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git cherry-pick
+usage: git cherry-pick [--edit] [-n] [-m <parent-number>] [-s] [-x] [--ff]
+                       [-S[<keyid>]] <commit>...
+   or: git cherry-pick (--continue | --skip | --abort | --quit)
+
+    --quit                end revert or cherry-pick sequence
+    --continue            resume revert or cherry-pick sequence
+    --abort               cancel revert or cherry-pick sequence
+    --skip                skip current commit and continue
+    --[no-]cleanup <mode> how to strip spaces and #comments from message
+    -n, --no-commit       don't automatically commit
+    --commit              opposite of --no-commit
+    -e, --[no-]edit       edit the commit message
+    -s, --[no-]signoff    add a Signed-off-by trailer
+    -m, --[no-]mainline <parent-number>
+                          select mainline parent
+    --[no-]rerere-autoupdate
+                          update the index with reused conflict resolution if possible
+    --[no-]strategy <strategy>
+                          merge strategy
+    -X, --[no-]strategy-option <option>
+                          option for merge strategy
+    -S, --[no-]gpg-sign[=<key-id>]
+                          GPG sign commit
+    -x                    append commit name
+    --[no-]ff             allow fast-forward
+    --[no-]allow-empty    preserve initially empty commits
+    --[no-]allow-empty-message
+                          allow commits with empty messages
+    --[no-]keep-redundant-commits
+                          keep redundant, empty commits
+
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git push
+Username for 'https://github.com': Aravindhan-KS
+Password for 'https://Aravindhan-KS@github.com':
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 20 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 357 bytes | 357.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Aravindhan-KS/Week2-DevOps.git
+   80776a9..16229f8  main -> main
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git rm --cached sample.txt
+rm 'sample.txt'
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git add .
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git commit -m "changes"
+[main f5cc80b] changes
+ 1 file changed, 5 deletions(-)
+ delete mode 100644 sample.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git push
+Username for 'https://github.com': Aravindhan-KS
+Password for 'https://Aravindhan-KS@github.com':
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 20 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 223 bytes | 223.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Aravindhan-KS/Week2-DevOps.git
+   16229f8..f5cc80b  main -> main
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git cherry-pick 16229f8
+On branch main
+Your branch is up to date with 'origin/main'.
+
+You are currently cherry-picking commit 16229f8.
+  (all conflicts fixed: run "git cherry-pick --continue")
+  (use "git cherry-pick --skip" to skip this patch)
+  (use "git cherry-pick --abort" to cancel the cherry-pick operation)
+
+nothing to commit, working tree clean
+The previous cherry-pick is now empty, possibly due to conflict resolution.
+If you wish to commit it anyway, use:
+
+    git commit --allow-empty
+
+Otherwise, please use 'git cherry-pick --skip'
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$

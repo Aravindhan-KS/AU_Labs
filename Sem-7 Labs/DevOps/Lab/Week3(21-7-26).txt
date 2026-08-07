@@ -1,0 +1,570 @@
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab$ tree
+.
+├── Week1
+│   ├── dotfile.txt
+│   ├── sample.txt
+│   └── sample1.txt
+├── Week2
+│   ├── file2.txt
+│   └── sample.txt
+└── Week3
+
+4 directories, 5 files
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab$ cd Week2
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git branch develop
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   sample.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git status -s
+ M sample.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git commit
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   sample.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git branch
+  develop
+* main
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git switch develop
+M       sample.txt
+Switched to branch 'develop'
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git branch
+* develop
+  main
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git checkout
+M       sample.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git branch
+* develop
+  main
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ nano sample.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git commit -m
+error: switch `m' requires a value
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git commit -m "add: new lines"
+On branch develop
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   sample.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git add sample.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git commit -m "add: new lines"
+[develop 0da1387] add: new lines
+ 1 file changed, 2 insertions(+)
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git push
+fatal: The current branch develop has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin develop
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$  git push --set-upstream origin develop
+Username for 'https://github.com': Aravindhan-KS
+Password for 'https://Aravindhan-KS@github.com':
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 20 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 351 bytes | 351.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'develop' on GitHub by visiting:
+remote:      https://github.com/Aravindhan-KS/Week2-DevOps/pull/new/develop
+remote:
+To https://github.com/Aravindhan-KS/Week2-DevOps.git
+ * [new branch]      develop -> develop
+branch 'develop' set up to track 'origin/develop'.
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ nano newfile.tx
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ rm newfile.tx
+rm: cannot remove 'newfile.tx': No such file or directory
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ nano newfile.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Turn this message off by running
+hint: "git config advice.addEmptyPathspec false"
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git add .
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git status
+On branch develop
+Your branch is up to date with 'origin/develop'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   newfile.txt
+
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git commit -m "add: new file"
+[develop f59775c] add: new file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 newfile.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git push --set-upstream origin develop
+Username for 'https://github.com': Aravindhan-KS
+Password for 'https://Aravindhan-KS@github.com':
+remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/Aravindhan-KS/Week2-DevOps.git/'
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git push --set-upstream origin develop
+Username for 'https://github.com': Aravindhan-KS
+Password for 'https://Aravindhan-KS@github.com':
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 20 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 357 bytes | 357.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Aravindhan-KS/Week2-DevOps.git
+   0da1387..f59775c  develop -> develop
+branch 'develop' set up to track 'origin/develop'.
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git checkout
+Your branch is up to date with 'origin/develop'.
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git merge develop
+Updating 4218fd1..f59775c
+Fast-forward
+ newfile.txt | 1 +
+ sample.txt  | 2 ++
+ 2 files changed, 3 insertions(+)
+ create mode 100644 newfile.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git push --set-upstream origin
+Username for 'https://github.com': Aravindhan-KS
+Password for 'https://Aravindhan-KS@github.com':
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Aravindhan-KS/Week2-DevOps.git
+   4218fd1..f59775c  main -> main
+branch 'main' set up to track 'origin/main'.
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git branch
+  develop
+* main
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ vi newfile.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git add .
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git commit -m "new line added"
+[main 88b39b5] new line added
+ 1 file changed, 1 insertion(+)
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git switch develop
+Switched to branch 'develop'
+Your branch is up to date with 'origin/develop'.
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ vi newfile.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git add .
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git commit -m "new line added on develop branch"
+[develop 69f94b5] new line added on develop branch
+ 1 file changed, 1 insertion(+)
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git switch main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git merge
+Already up to date.
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git merge develop
+Auto-merging newfile.txt
+CONFLICT (content): Merge conflict in newfile.txt
+Automatic merge failed; fix conflicts and then commit the result.
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git mergetool --tool=vimdiff
+Merging:
+newfile.txt
+
+Normal merge conflict for 'newfile.txt':
+  {local}: modified file
+  {remote}: modified file
+4 files to edit
+
+[1]+  Stopped                 git mergetool --tool=vimdiff
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git rebase develop
+newfile.txt: needs merge
+error: cannot rebase: You have unstaged changes.
+error: additionally, your index contains uncommitted changes.
+error: Please commit or stash them.
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git status -s
+UU newfile.txt
+?? .newfile.txt.swp
+?? .newfile_BASE_1837.txt.swp
+?? .newfile_LOCAL_1837.txt.swp
+?? .newfile_REMOTE_1837.txt.swp
+?? newfile_BACKUP_1837.txt
+?? newfile_BASE_1837.txt
+?? newfile_LOCAL_1837.txt
+?? newfile_REMOTE_1837.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git log
+commit 88b39b5f379dac26fa599a2324a113ed2bbc83ff (HEAD -> main)
+Author: Aravindhan-KS <aravindhanks2005@gmail.com>
+Date:   Tue Jul 21 10:18:58 2026 +0000
+
+    new line added
+
+commit f59775c5771f84f607f73da49bc35dda40a43687 (origin/main, origin/develop)
+Author: Aravindhan-KS <aravindhanks2005@gmail.com>
+Date:   Tue Jul 21 10:10:10 2026 +0000
+
+    add: new file
+
+commit 0da13871e3138e9bb50bf93107e8294c4d4c98f8
+Author: Aravindhan-KS <aravindhanks2005@gmail.com>
+Date:   Tue Jul 21 10:05:02 2026 +0000
+
+    add: new lines
+
+commit 4218fd1b9cf9d2058a258621673506acadaa4262
+Author: Aravindhan-KS <aravindhanks2005@gmail.com>
+Date:   Tue Jul 14 10:43:35 2026 +0000
+
+    New Line Added
+
+commit 03fe4f536633859815afedbe66828ce7f52dd51e
+Author: Aravindhan-KS <aravindhanks2005@gmail.com>
+Date:   Tue Jul 14 10:01:51 2026 +0000
+
+    commit
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git branch
+  develop
+* main
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git add .
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git commit -m "spam file"
+[main aa38bd5] spam file
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git rebase develop
+Auto-merging newfile.txt
+CONFLICT (content): Merge conflict in newfile.txt
+error: could not apply 88b39b5... new line added
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply 88b39b5... new line added
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git rebase --abort
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git rebase develop
+Auto-merging newfile.txt
+CONFLICT (content): Merge conflict in newfile.txt
+error: could not apply 88b39b5... new line added
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply 88b39b5... new line added
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git rebase --abort
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git stash
+No local changes to save
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git status -s
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git switch develop
+Switched to branch 'develop'
+Your branch is ahead of 'origin/develop' by 1 commit.
+  (use "git push" to publish your local commits)
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git status -s
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git status
+On branch develop
+Your branch is ahead of 'origin/develop' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ vi newfile.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git add .
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git commit -m "edited lines"
+[develop 2b0a40f] edited lines
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git switch main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git rebase develop
+Auto-merging newfile.txt
+CONFLICT (content): Merge conflict in newfile.txt
+error: could not apply 88b39b5... new line added
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply 88b39b5... new line added
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git rebase --abort
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git rebase develop
+Auto-merging newfile.txt
+CONFLICT (content): Merge conflict in newfile.txt
+error: could not apply 88b39b5... new line added
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply 88b39b5... new line added
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git rebase --continue
+newfile.txt: needs merge
+You must edit all merge conflicts and then
+mark them as resolved using git add
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git branch
+* (no branch, rebasing main)
+  develop
+  main
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git branch main
+fatal: a branch named 'main' already exists
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git switch main
+fatal: cannot switch branch while rebasing
+Consider "git rebase --quit" or "git worktree add".
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git rebase --quit
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git switch main
+newfile.txt: needs merge
+error: you need to resolve your current index first
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ vi newfile.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git add .
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git commit -m "edited lines"
+[detached HEAD b349790] edited lines
+ 1 file changed, 1 deletion(-)
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git rebase develop
+HEAD is up to date.
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git log --oneline
+b349790 (HEAD) edited lines
+2b0a40f (develop) edited lines
+69f94b5 new line added on develop branch
+f59775c (origin/main, origin/develop) add: new file
+0da1387 add: new lines
+4218fd1 New Line Added
+03fe4f5 commit
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git rebase --continue
+fatal: No rebase in progress?
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git mergetool --tool=vimdiff
+No files need merging
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git branch
+* (HEAD detached from refs/heads/main)
+  develop
+  main
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git switch main
+Warning: you are leaving 1 commit behind, not connected to
+any of your branches:
+
+  b349790 edited lines
+
+If you want to keep it by creating a new branch, this may be a good time
+to do so with:
+
+ git branch <new-branch-name> b349790
+
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git rebase develop
+Auto-merging newfile.txt
+CONFLICT (content): Merge conflict in newfile.txt
+error: could not apply 88b39b5... new line added
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply 88b39b5... new line added
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git rebase --abort
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git rebase develop
+Auto-merging newfile.txt
+CONFLICT (content): Merge conflict in newfile.txt
+error: could not apply 88b39b5... new line added
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply 88b39b5... new line added
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ vi newfile.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git add .
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git commit -m "edited lines"
+[detached HEAD f03c420] edited lines
+ 1 file changed, 1 deletion(-)
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git rebase --abort
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git rebase develop
+Auto-merging newfile.txt
+CONFLICT (content): Merge conflict in newfile.txt
+error: could not apply 88b39b5... new line added
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply 88b39b5... new line added
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git log --oneline
+2b0a40f (HEAD, develop) edited lines
+69f94b5 new line added on develop branch
+f59775c (origin/main, origin/develop) add: new file
+0da1387 add: new lines
+4218fd1 New Line Added
+03fe4f5 commit
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git rebase develop
+fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+        git rebase (--continue | --abort | --skip)
+If that is not the case, please
+        rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git rebase --continue
+newfile.txt: needs merge
+You must edit all merge conflicts and then
+mark them as resolved using git add
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git mergetool --tool=vimdiff
+Merging:
+newfile.txt
+
+Normal merge conflict for 'newfile.txt':
+  {local}: modified file
+  {remote}: modified file
+4 files to edit
+
+[2]+  Stopped                 git mergetool --tool=vimdiff
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git status
+interactive rebase in progress; onto 2b0a40f
+Last command done (1 command done):
+   pick 88b39b5 new line added
+No commands remaining.
+You are currently rebasing branch 'main' on '2b0a40f'.
+  (fix conflicts and then run "git rebase --continue")
+  (use "git rebase --skip" to skip this patch)
+  (use "git rebase --abort" to check out the original branch)
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+        both modified:   newfile.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .newfile.txt.swp
+        .newfile_BASE_2401.txt.swp
+        .newfile_LOCAL_2401.txt.swp
+        .newfile_REMOTE_2401.txt.swp
+        newfile_BACKUP_2401.txt
+        newfile_BASE_2401.txt
+        newfile_LOCAL_2401.txt
+        newfile_REMOTE_2401.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git rebase --quit
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git status
+HEAD detached from refs/heads/main
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+        both modified:   newfile.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .newfile.txt.swp
+        .newfile_BASE_2401.txt.swp
+        .newfile_LOCAL_2401.txt.swp
+        .newfile_REMOTE_2401.txt.swp
+        newfile_BACKUP_2401.txt
+        newfile_BASE_2401.txt
+        newfile_LOCAL_2401.txt
+        newfile_REMOTE_2401.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ rm newfile_BASE_2401.txt newfile_LOCAL_2401.txt newfile_REMOTE_2401.txt newfile_BACKUP_2401.txt
+rm .newfile.txt.swp .newfile_BASE_2401.txt.swp .newfile_LOCAL_2401.txt.swp .newfile_REMOTE_2401.txt.swp
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git config --global mergetool.keepBackup false
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ nano newfile.tx
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ nano newfile.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git status
+HEAD detached from refs/heads/main
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+        both modified:   newfile.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git rebase develop
+newfile.txt: needs merge
+error: cannot rebase: You have unstaged changes.
+error: additionally, your index contains uncommitted changes.
+error: Please commit or stash them.
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ nano newfile.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git switch develop
+newfile.txt: needs merge
+error: you need to resolve your current index first
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git add .
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git commit -a
+[detached HEAD af83d55] new line added
+ 1 file changed, 1 deletion(-)
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git switch develop
+Warning: you are leaving 1 commit behind, not connected to
+any of your branches:
+
+  af83d55 new line added
+
+If you want to keep it by creating a new branch, this may be a good time
+to do so with:
+
+ git branch <new-branch-name> af83d55
+
+Switched to branch 'develop'
+Your branch is ahead of 'origin/develop' by 2 commits.
+  (use "git push" to publish your local commits)
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ nano newfile.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git switch main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git rebase develop
+Auto-merging newfile.txt
+CONFLICT (content): Merge conflict in newfile.txt
+error: could not apply 88b39b5... new line added
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply 88b39b5... new line added
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git rebase --continue
+newfile.txt: needs merge
+You must edit all merge conflicts and then
+mark them as resolved using git add
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ nano newfile.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git branch
+* (no branch, rebasing main)
+  develop
+  main
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git status
+interactive rebase in progress; onto 2b0a40f
+Last command done (1 command done):
+   pick 88b39b5 new line added
+No commands remaining.
+You are currently rebasing branch 'main' on '2b0a40f'.
+  (fix conflicts and then run "git rebase --continue")
+  (use "git rebase --skip" to skip this patch)
+  (use "git rebase --abort" to check out the original branch)
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+        both modified:   newfile.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git add newfile.txt
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git commit -m "file edited"
+[detached HEAD 80776a9] file edited
+ 1 file changed, 4 insertions(+)
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git status
+interactive rebase in progress; onto 2b0a40f
+Last command done (1 command done):
+   pick 88b39b5 new line added
+No commands remaining.
+You are currently editing a commit while rebasing branch 'main' on '2b0a40f'.
+  (use "git commit --amend" to amend the current commit)
+  (use "git rebase --continue" once you are satisfied with your changes)
+
+nothing to commit, working tree clean
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$ git rebase --continue
+Successfully rebased and updated refs/heads/main.
+aravindhan@LAPTOP-S0LMROKG:~/DevOps/Lab/Week2$
